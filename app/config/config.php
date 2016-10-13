@@ -6,7 +6,7 @@
 use Monolog\Logger;
 
 return [
-    'debug' => false,
+    'debug' => true,
 
     'logger' => [
         'path' => dirname(dirname(__DIR__)) . '/tmp/app.log',
