@@ -3,11 +3,11 @@
  *
  */
 
-namespace YourProject;
+namespace Miser;
 
 use Dietcube\Application as DCApplication;
 use Pimple\Container;
-use YourProject\Service\SampleService;
+use Miser\Service\SampleService;
 
 class Application extends DCApplication
 {

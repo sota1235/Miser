@@ -1,6 +1,6 @@
 <?php
 
-namespace YourProject;
+namespace Miser;
 
 use Dietcube\RouteInterface;
 use Pimple\Container;

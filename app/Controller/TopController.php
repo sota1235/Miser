@@ -3,7 +3,7 @@
  *
  */
 
-namespace YourProject\Controller;
+namespace Miser\Controller;
 
 use Dietcube\Controller;
 
