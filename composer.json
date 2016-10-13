@@ -1,6 +1,6 @@
 {
-    "name": "dietcube/project",
-    "description": "Project skeleton for Dietcube 1.0.x",
+    "name": "sota1235/Miser",
+    "description": "tbd",
     "require-dev": {
         "phpunit/phpunit": "5.1.x",
         "fabpot/php-cs-fixer": "1.x",

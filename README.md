@@ -1,19 +1,11 @@
-Heaven or Hell(Working title)
+Miser
 ====
 
 Simple household account book.
 
 ### Description
 
-You need to record your day is "heaven" or "hell".
-
-- "heaven"
-
-Amount of money you used today is under the target of money.
-
-- "hell"
-
-Amount of money you used today is over the target of money.
+tbd
 
 ### Demo
 
