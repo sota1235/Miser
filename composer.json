@@ -1,0 +1,12 @@
+{
+    "name": "sota1235/heaven-or-hell",
+    "description": "Simple household account book system.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "sota1235",
+            "email": "sota1235@gmail.com"
+        }
+    ],
+    "require": {}
+}
