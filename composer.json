@@ -16,5 +16,8 @@
         "psr-4": {
             "Miser\\": "app/"
         }
+    },
+    "scripts": {
+      "test": "phpunit"
     }
 }
