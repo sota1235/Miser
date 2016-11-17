@@ -55,8 +55,18 @@
 
     <div class="main">
 
-      <h1>YourProject</h1>
-      <p>{{ sample_hello }}</p>
+      <h1>Miser</h1>
+      <ul>
+        {% for week in month %}
+          {% for day in week %}
+            {% if month.includes(day) %}
+              <li>{{ day.format('d') }}</li>
+            {% else %}
+              <li style="color: red;">{{ day.format('d') }}</li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
 
     </div>
 

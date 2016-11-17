@@ -11,10 +11,11 @@ class TopController extends Controller
 {
     public function index()
     {
-        $sample_service = $this->get('service.sample');
+        $calendarService = $this->get('service.calendar');
+        $currentMonth = $calendarService->getCurrentMonth();
 
         return $this->render('index', [
-            'sample_hello' => $sample_service->sayHello(),
+            'month' => $currentMonth,
         ]);
     }
 }
