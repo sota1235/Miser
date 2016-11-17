@@ -15,6 +15,12 @@ tbd
 
 ### Usage
 
+Exec the command below, then you can access `localhost:8888`.
+
+```
+php -S localhost:8888 webroot/index.php
+```
+
 ### Install
 
 ### Contribution
