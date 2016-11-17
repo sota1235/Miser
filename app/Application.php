@@ -7,13 +7,18 @@ namespace Miser;
 
 use Dietcube\Application as DCApplication;
 use Pimple\Container;
+use CalendR\Calendar;
 use Miser\Service\SampleService;
+use Miser\Service\CalendarService;
 
 class Application extends DCApplication
 {
     public function init(Container $container)
     {
         // do something before boot
+        $container['calendar'] = function () {
+            return new Calendar;
+        };
     }
 
     public function config(Container $container)
@@ -24,6 +29,12 @@ class Application extends DCApplication
             $sample_service->setLogger($container['logger']);
 
             return $sample_service;
+        };
+
+        $container['service.calendar'] = function ($c) {
+            $calendarService = new CalendarService($c['calendar']);
+
+            return $calendarService;
         };
     }
 }
