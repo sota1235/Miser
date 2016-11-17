@@ -24,6 +24,7 @@
     "power-assert": "^1.4.1",
     "proxyquire": "^1.7.10",
     "sinon": "^1.17.6",
+    "stylus": "^0.54.5",
     "webpack": "^1.13.2"
   },
   "dependencies": {
