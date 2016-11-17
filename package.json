@@ -4,6 +4,7 @@
   "scripts": {
     "build:js": "webpack",
     "build:css": "stylus ./resources/stylus/index.styl -o ./webroot/public",
+    "build": "npm run build:js && npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
