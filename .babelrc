@@ -1,0 +1,7 @@
+{
+  "presets": ["es2015", "es2016", "power-assert", "react"],
+  "plugins": [
+    "add-module-exports",
+    "transform-inline-environment-variables"
+  ]
+}
