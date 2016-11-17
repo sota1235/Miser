@@ -30,7 +30,7 @@ class CalendarService
      *
      * @return Calendar
      */
-    public function getNowMonth()
+    public function getCurrentMonth()
     {
         /** @var Carbon */
         $now = Carbon::now();
