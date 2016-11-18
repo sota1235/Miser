@@ -46,8 +46,8 @@ class CalendarService
      *
      * @return Calendar
      */
-    public function getMonth()
+    public function getMonth($year, $month)
     {
-        // TODO: implement
+        return $this->factory->getMonth($year, $month);
     }
 }
