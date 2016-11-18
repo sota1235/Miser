@@ -21,27 +21,29 @@
 
       <h1>Miser</h1>
 
-      <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-      </ul>
+      <div class="calendar">
+        <ul class="weekdays">
+          <li>Mo</li>
+          <li>Tu</li>
+          <li>We</li>
+          <li>Th</li>
+          <li>Fr</li>
+          <li>Sa</li>
+          <li>Su</li>
+        </ul>
 
-      <ul class="days">
-        {% for week in month %}
-          {% for day in week %}
-            {% if month.includes(day) %}
-              <li>{{ day.format('d') }}</li>
-            {% else %}
-              <li style="color: red;">{{ day.format('d') }}</li>
-            {% endif %}
+        <ul class="days">
+          {% for week in month %}
+            {% for day in week %}
+              {% if month.includes(day) %}
+                <li>{{ day.format('d') }}</li>
+              {% else %}
+                <li style="color: red;">{{ day.format('d') }}</li>
+              {% endif %}
+            {% endfor %}
           {% endfor %}
-        {% endfor %}
-      </ul>
+        </ul>
+      </div>
 
     </div>
 
