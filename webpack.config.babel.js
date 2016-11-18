@@ -7,6 +7,9 @@ const DEBUG = !(process.env.NODE_ENV === 'production');
 
 export default {
   cache: true,
+  watchOptions: {
+    poll: 500,
+  },
   entry: './resources/js/app.js',
   output: {
     path: 'webroot/public',

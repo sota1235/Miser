@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "export-node-path": "export NODE_PATH=./resources/js",
-    "build:js": "webpack",
+    "build:js": "webpack --colors --progress",
     "build:css": "stylus ./resources/stylus/index.styl -o ./webroot/public",
     "build": "npm run build:js && npm run build:css",
+    "watch:js": "npm run build:js -- --watch",
+    "watch:css": "npm run build:css -- -w",
+    "watch": "npm run watch:js & npm run watch:css",
     "lint": "eslint --fix ./resources/js",
     "test": "npm run export-node-path && mocha --opts ./resources/js/tests/mocha.opts --recursive ./resources/js/tests/**/*-test.js"
   },
