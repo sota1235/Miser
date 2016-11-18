@@ -37,4 +37,17 @@ class CalendarService
 
         return $this->factory->getMonth($now->year, $now->month);
     }
+
+    /**
+     * Get data of the month.
+     *
+     * @param int  $year
+     * @param int  $month
+     *
+     * @return Calendar
+     */
+    public function getMonth()
+    {
+        // TODO: implement
+    }
 }

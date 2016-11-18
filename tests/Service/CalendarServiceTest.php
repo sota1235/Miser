@@ -23,4 +23,9 @@ class CalendarServiceTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf(Month::class, $this->service->getCurrentMonth());
     }
+
+    public function testGetMonthShouldReturnCalendarObject()
+    {
+        $this->assertInstanceOf(Month::class, $this->service->getMonth(2016, 9));
+    }
 }
