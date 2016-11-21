@@ -17,6 +17,7 @@
       "Miser\\": "app/"
     },
     "files": [
+      "app/Foundation/Helpers/url.php"
     ]
   },
   "scripts": {
