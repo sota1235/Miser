@@ -1,57 +1,29 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="format-detection" content="telephone=on">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <meta name="robots" content="INDEX,FOLLOW" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="">
-    <title>Welcome to Dietcube</title>
-    <link rel="stylesheet" type="text/css" href="/public/index.css" />
-  </head>
-  <body>
+{% extends "master.html.twig" %}
 
-    <div class="main">
+{% block body %}
+<h1>Miser</h1>
 
-      <h1>Miser</h1>
+<div class="calendar">
+  <ul class="weekdays">
+    <li>Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+    <li>Su</li>
+  </ul>
 
-      <div class="calendar">
-        <ul class="weekdays">
-          <li>Mo</li>
-          <li>Tu</li>
-          <li>We</li>
-          <li>Th</li>
-          <li>Fr</li>
-          <li>Sa</li>
-          <li>Su</li>
-        </ul>
-
-        <ul class="days">
-          {% for week in month %}
-            {% for day in week %}
-              {% if month.includes(day) %}
-                <li>{{ day.format('d') }}</li>
-              {% else %}
-                <li style="color: red;">{{ day.format('d') }}</li>
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-        </ul>
-      </div>
-
-    </div>
-
-    <footer class="footer">
-      <p>© 2016 <a href="https://twitter.com/sota1235">@sota1235</a></p>
-    </footer>
-
-  </body>
-</html>
-
-
+  <ul class="days">
+    {% for week in month %}
+      {% for day in week %}
+        {% if month.includes(day) %}
+          <li>{{ day.format('d') }}</li>
+        {% else %}
+          <li style="color: red;">{{ day.format('d') }}</li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
