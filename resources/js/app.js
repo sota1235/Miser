@@ -1,5 +1,11 @@
 /**
  * @fileoverview Main file for app.
  */
+import React    from 'react';
+import {render} from 'react-dom';
+import App      from 'components/app-component';
 
-console.log('Hello, miser!');
+render(
+  <App />,
+  document.getElementById('main')
+)
