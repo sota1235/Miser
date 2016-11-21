@@ -28,7 +28,15 @@
 </div>
 
 <div class="level calendar-bar">
-  <div class="level-left button is-primary is-outlined">前の月だよ</div>
-  <div class="level-right button is-primary is-outlined">次の月だよ</div>
+  <div class="level-left button is-primary is-outlined">
+    <a href="{{ redirectToCalendar(month.getPrevious().format('Y'), month.getPrevious().format('m')) }}">
+      前の月
+    </a>
+  </div>
+  <div class="level-right button is-primary is-outlined">
+    <a href="{{ redirectToCalendar(month.getNext().format('Y'), month.getNext().format('m')) }}">
+      次の月
+    </a>
+  </div>
 </div>
 {% endblock %}
