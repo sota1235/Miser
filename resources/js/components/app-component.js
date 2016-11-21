@@ -1,9 +1,10 @@
 /**
  * @fileoverview Route component for app.
  */
-import React    from 'react';
-import Calendar from 'components/calendar-component';
-import { uniqueId } from 'lodash';
+import React          from 'react';
+import Calendar       from 'components/calendar-component';
+import CalendarFooter from 'components/calendar-footer-component';
+import { uniqueId }   from 'lodash';
 
 const dummyData = [
   { day: 26, isCurrent: false, fulldate: uniqueId() },
@@ -22,10 +23,16 @@ const dummyData = [
   { day: 9, isCurrent: true, fulldate: uniqueId()  },
 ];
 
+const dummyLinks = {
+  prevMonth: '/?year=2016&month=5',
+  nextMonth: '/?year=2016&month=7',
+};
+
 const App = () => (
   <div className="miser-app">
     <p>Miser</p>
     <Calendar calendars={ dummyData } />
+    <CalendarFooter links={ dummyLinks } />
   </div>
 );
 
