@@ -2,6 +2,7 @@
  * @fileoverview Calendar component.
  */
 import React, { PropTypes } from 'react';
+import CalendarDay          from 'components/calendar-day-component';
 
 const Calendar = ({ calendars }) => (
   <div className="calendar">
@@ -17,13 +18,14 @@ const Calendar = ({ calendars }) => (
 
     <ul className="days">
       {calendars.map(calendar => {
-        const className = calendar.isCurrent ?
-          'days-is-current' : 'days-is-not-current';
-
+        const { isCurrent, fulldate, day } = calendar;
         return (
-          <li className={ className } key={ calendar.fulldate }>
-            { calendar.day }
-          </li>
+          <CalendarDay
+            isCurrent={ isCurrent }
+            fulldate={ fulldate }
+            key={ fulldate }
+            day={ day }
+          />
         );
       })}
     </ul>
