@@ -36,5 +36,23 @@ class Application extends DCApplication
 
             return $calendarService;
         };
+
+        $this->detectConfigForTwit($container);
+    }
+
+    /**
+     * Twigの設定を上書き
+     *
+     * @param Container  $container
+     */
+    protected function detectConfigForTwit(Container $container)
+    {
+        $renderer = $container['app.renderer'];
+
+        $redirectToCalendarFunction = new \Twig_SimpleFunction('redirectToCalendar', function ($year, $month) {
+            return redirectToCalendar($year, $month);
+        });
+
+        $renderer->addFunction($redirectToCalendarFunction);
     }
 }
