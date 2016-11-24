@@ -57,10 +57,16 @@ class CalendarDayEntity
      */
     public function toArray()
     {
-        return [
-            'day'       => $this->day,
-            'isCurrent' => $this->isCurrent,
-            'timestamp' => $this->timestamp,
-        ];
+        $reflect = new \ReflectionClass($this);
+        $properties = $reflect->getProperties(\ReflectionProperty::IS_PROTECTED);
+
+        $array = [];
+
+        foreach ($properties as $property) {
+            $property->setAccessible(true);
+            $array[$property->getName()] = $property->getValue($this);
+        }
+
+        return $array;
     }
 }
