@@ -51,4 +51,16 @@ class CalendarDayEntity
     {
         return $this->{$key};
     }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'day'       => $this->day,
+            'isCurrent' => $this->isCurrent,
+            'timestamp' => $this->timestamp,
+        ];
+    }
 }

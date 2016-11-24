@@ -19,6 +19,16 @@ class CalendarDayEntityTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($calendarDay->timestamp, $timestamp);
     }
 
+    public function testToArrayShouldReturnArray()
+    {
+        $day       = 25;
+        $isCurrent = true;
+        $timestamp = 12345;
+
+        $calendarDay = new CalendarDayEntity($day, $isCurrent, $timestamp);
+
+        $this->assertEquals($calendarDay->toArray(), compact('day', 'isCurrent', 'timestamp'));
+    }
     /**
      * @dataProvider getInvalidParameters
      * @expectedException Miser\Exceptions\InvalidEntityParameterException
