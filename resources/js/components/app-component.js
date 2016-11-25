@@ -3,7 +3,7 @@
  */
 import React          from 'react';
 import Calendar       from 'components/calendar-component';
-import CalendarFooter from 'components/calendar-footer-component';
+import CalendarFooter from 'containers/calendar-footer-container';
 import { uniqueId }   from 'lodash';
 
 const dummyData = [
@@ -32,7 +32,7 @@ const App = () => (
   <div className="miser-app">
     <p>Miser</p>
     <Calendar calendars={ dummyData } />
-    <CalendarFooter links={ dummyLinks } />
+    <CalendarFooter />
   </div>
 );
 
