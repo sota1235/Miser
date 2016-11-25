@@ -1,7 +1,6 @@
 /**
  * @fileoverview Config for webpack.
  */
-import 'babel-polyfill';
 import webpack from 'webpack';
 import path from 'path';
 
@@ -12,7 +11,7 @@ export default {
   watchOptions: {
     poll: 500,
   },
-  entry: './resources/js/app.js',
+  entry: ['babel-polyfill', './resources/js/app.js'],
   output: {
     path: 'webroot/public',
     filename: 'app.js',
