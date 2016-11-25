@@ -34,7 +34,7 @@ const Calendar = ({ calendars }) => (
 
 Calendar.propTypes = {
   calendars: PropTypes.arrayOf(PropTypes.shape({
-    timestamp : PropTypes.string.isRequired,
+    timestamp : PropTypes.number.isRequired,
     day       : PropTypes.number.isRequired,
     isCurrent : PropTypes.bool.isRequired,
   }).isRequired).isRequired,

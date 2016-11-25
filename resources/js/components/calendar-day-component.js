@@ -15,7 +15,7 @@ const CalendarDay = ({ isCurrent, timestamp, day }) => (
 
 CalendarDay.propTypes = {
   isCurrent : PropTypes.bool.isRequired,
-  timestamp : PropTypes.string.isRequired,
+  timestamp : PropTypes.number.isRequired,
   day       : PropTypes.number.isRequired,
 };
 

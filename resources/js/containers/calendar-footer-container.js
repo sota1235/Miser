@@ -7,10 +7,14 @@ import {goToPrevMonth, goToNextMonth} from 'actions/actions';
 
 const mapStateToProps = () => ({
   // TODO: implement
-  prevYear: 2016,
-  prevMonth: 7,
-  nextYear: 2016,
-  nextMonth: 9,
+  prevMonth: {
+    year  : 2016,
+    month : 7,
+  },
+  nextMonth: {
+    year  : 2016,
+    month : 9,
+  },
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

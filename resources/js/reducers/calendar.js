@@ -1,7 +1,8 @@
 /**
  * @fileoverview Reducer for changing calendar state.
  */
-import { uniqueId }   from 'lodash';
+import {uniqueId} from 'lodash';
+import * as ActionNames from 'actions/action-types';
 
 const dummyData = [
   { day: 26, isCurrent: false, timestamp: uniqueId() },
@@ -38,10 +39,12 @@ const day = (state, action) => ({
  * @param {Object} action
  * @return {array}
  */
-const calendar = (state = [], action) => {
+const calendar = (state = dummyData, action) => {
   switch (action.type) {
+    case ActionNames.UPDATE_CALENDAR:
+      return action.calendar;
     default:
-      return dummyData;
+      return state;
   }
 };
 
