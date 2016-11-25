@@ -4,7 +4,7 @@
 import * as ActionNames from 'actions/action-types';
 import {updateCalendar} from 'actions/actions';
 
-const updateCalendar = store => next => action => {
+const updateCalendarMiddleware = store => next => action => {
   if (action.type === ActionNames.GO_TO_PREV_MONTH
     || action.type === ActionNames.GO_TO_NEXT_MONTH) {
     // TODO: get data form server
@@ -16,4 +16,4 @@ const updateCalendar = store => next => action => {
   return next(action);
 };
 
-export default updateCalendar;
+export default updateCalendarMiddleware;
