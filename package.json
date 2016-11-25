@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "axios": "^0.15.0",
+    "babel-polyfill": "^6.16.0",
     "bulma": "^0.2.3",
     "domready": "^1.0.8",
     "es6-promise": "^4.0.5",

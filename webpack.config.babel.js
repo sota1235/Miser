@@ -1,6 +1,7 @@
 /**
  * @fileoverview Config for webpack.
  */
+import 'babel-polyfill';
 import webpack from 'webpack';
 import path from 'path';
 
