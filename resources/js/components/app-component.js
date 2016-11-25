@@ -23,11 +23,6 @@ const dummyData = [
   { day: 9, isCurrent: true, fulldate: uniqueId()  },
 ];
 
-const dummyLinks = {
-  prevMonth: '/?year=2016&month=5',
-  nextMonth: '/?year=2016&month=7',
-};
-
 const App = () => (
   <div className="miser-app">
     <p>Miser</p>
