@@ -2,7 +2,7 @@
  * @fileoverview Route component for app.
  */
 import React          from 'react';
-import Calendar       from 'components/calendar-component';
+import Calendar       from 'containers/calendar-container';
 import CalendarFooter from 'containers/calendar-footer-container';
 import { uniqueId }   from 'lodash';
 
@@ -26,7 +26,7 @@ const dummyData = [
 const App = () => (
   <div className="miser-app">
     <p>Miser</p>
-    <Calendar calendars={ dummyData } />
+    <Calendar />
     <CalendarFooter />
   </div>
 );
