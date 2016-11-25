@@ -3,7 +3,8 @@
  */
 
 import {combineReducers} from 'redux';
+import calendar from 'reducers/calendar';
 
-const reducers = combineReducers({});
+const reducers = combineReducers({calendar});
 
 export default reducers;
