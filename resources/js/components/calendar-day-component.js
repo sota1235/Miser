@@ -3,7 +3,7 @@
  */
 import React, { PropTypes } from 'react';
 
-const CalendarDay = ({ isCurrent, fulldate, day }) => (
+const CalendarDay = ({ isCurrent, timestamp, day }) => (
   <li
     className={
       isCurrent ? 'days-is-current' : 'days-is-not-current'
@@ -15,7 +15,7 @@ const CalendarDay = ({ isCurrent, fulldate, day }) => (
 
 CalendarDay.propTypes = {
   isCurrent : PropTypes.bool.isRequired,
-  fulldate  : PropTypes.string.isRequired,
+  timestamp : PropTypes.string.isRequired,
   day       : PropTypes.number.isRequired,
 };
 
