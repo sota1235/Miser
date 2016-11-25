@@ -13,7 +13,7 @@ class Route implements RouteInterface
     public function definition(Container $container)
     {
         return [
-            ['GET', '/', 'Top::index'],
+            ['GET', '/calendar', 'Calendar::index'],
         ];
     }
 }

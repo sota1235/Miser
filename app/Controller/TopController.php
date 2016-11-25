@@ -1,13 +1,14 @@
 <?php
+
 /**
- *
+ * @copyright (c) sota1235
  */
 
 namespace Miser\Controller;
 
 use Dietcube\Controller;
 
-class TopController extends Controller
+class CalendarController extends Controller
 {
     public function index()
     {
@@ -17,6 +18,7 @@ class TopController extends Controller
         $isCurrent = (is_null($year) || is_null($month));
 
         $calendarService = $this->get('service.calendar');
+
         $monthData = $isCurrent ?
             $calendarService->getCurrentMonth() : $calendarService->getMonth($year, $month);
 
