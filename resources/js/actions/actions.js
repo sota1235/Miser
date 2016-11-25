@@ -28,3 +28,16 @@ export function goToNextMonth(year, month) {
     year, month,
   };
 }
+
+/**
+ * @description Update calendar.
+ * @param {number} year
+ * @param {number} month
+ * @return {Object}
+ */
+export function updateCalendar(calendar) {
+  return {
+    type: ActionNames.UPDATE_CALENDAR,
+    calendar,
+  };
+}

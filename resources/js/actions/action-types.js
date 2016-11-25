@@ -13,3 +13,9 @@ export const GO_TO_PREV_MONTH = 'GO_TO_PREV_MONTH';
  * @type {string}
  */
 export const GO_TO_NEXT_MONTH = 'GO_TO_NEXT_MONTH';
+
+/**
+ * @description Update data of calendar.
+ * @type {string}
+ */
+export const UPDATE_CALENDAR = 'UPDATE_CALENDAR';
