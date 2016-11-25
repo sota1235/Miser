@@ -18,12 +18,12 @@ const Calendar = ({ calendars }) => (
 
     <ul className="days">
       {calendars.map(calendar => {
-        const { isCurrent, fulldate, day } = calendar;
+        const { isCurrent, timestamp, day } = calendar;
         return (
           <CalendarDay
             isCurrent={ isCurrent }
-            fulldate={ fulldate }
-            key={ fulldate }
+            timestamp={ timestamp }
+            key={ timestamp }
             day={ day }
           />
         );
@@ -34,7 +34,7 @@ const Calendar = ({ calendars }) => (
 
 Calendar.propTypes = {
   calendars: PropTypes.arrayOf(PropTypes.shape({
-    fulldate  : PropTypes.string.isRequired,
+    timestamp : PropTypes.string.isRequired,
     day       : PropTypes.number.isRequired,
     isCurrent : PropTypes.bool.isRequired,
   }).isRequired).isRequired,
