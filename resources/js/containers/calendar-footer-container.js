@@ -9,10 +9,10 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClickPrev() {
-    dispatch(goToPrevMonth(ownProps.prevYear, ownProps.prevMonth)
+    dispatch(goToPrevMonth(ownProps.prevYear, ownProps.prevMonth));
   },
   onClickNext() {
-    dispatch(goToPrevMonth(ownProps.nextYear, ownProps.nextMonth)
+    dispatch(goToPrevMonth(ownProps.nextYear, ownProps.nextMonth));
   },
 });
 
