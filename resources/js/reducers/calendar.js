@@ -5,20 +5,20 @@ import {uniqueId} from 'lodash';
 import * as ActionNames from 'actions/action-types';
 
 const dummyData = [
-  { day: 26, isCurrent: false, timestamp: uniqueId() },
-  { day: 27, isCurrent: false, timestamp: uniqueId()  },
-  { day: 28, isCurrent: false, timestamp: uniqueId()  },
-  { day: 29, isCurrent: false, timestamp: uniqueId()  },
-  { day: 30, isCurrent: false, timestamp: uniqueId()  },
-  { day: 1, isCurrent: true, timestamp: uniqueId()  },
-  { day: 2, isCurrent: true, timestamp: uniqueId()  },
-  { day: 3, isCurrent: true, timestamp: uniqueId()  },
-  { day: 4, isCurrent: true, timestamp: uniqueId()  },
-  { day: 5, isCurrent: true, timestamp: uniqueId()  },
-  { day: 6, isCurrent: true, timestamp: uniqueId()  },
-  { day: 7, isCurrent: true, timestamp: uniqueId()  },
-  { day: 8, isCurrent: true, timestamp: uniqueId()  },
-  { day: 9, isCurrent: true, timestamp: uniqueId()  },
+  { day: 26, isCurrent: false, timestamp: 1 },
+  { day: 27, isCurrent: false, timestamp: 2 },
+  { day: 28, isCurrent: false, timestamp: 3  },
+  { day: 29, isCurrent: false, timestamp: 4  },
+  { day: 30, isCurrent: false, timestamp: 5  },
+  { day: 1, isCurrent: true, timestamp: 6 },
+  { day: 2, isCurrent: true, timestamp: 7 },
+  { day: 3, isCurrent: true, timestamp: 8 },
+  { day: 4, isCurrent: true, timestamp: 9 },
+  { day: 5, isCurrent: true, timestamp: 10 },
+  { day: 6, isCurrent: true, timestamp: 11 },
+  { day: 7, isCurrent: true, timestamp: 12 },
+  { day: 8, isCurrent: true, timestamp: 13 },
+  { day: 9, isCurrent: true, timestamp: 14},
 ];
 
 /**
