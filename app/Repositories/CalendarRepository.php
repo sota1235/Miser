@@ -43,7 +43,7 @@ class CalendarRepository implements CalendarRepositoryInterface
             foreach ($week as $day) {
                 $entities[] = new CalendarDayEntity(
                     (int) $day->format('d'), $currentMonthCalendar->includes($day),
-                    (int) $day->format('u')
+                    (int) $day->format('U')
                 );
             }
         }
@@ -67,7 +67,7 @@ class CalendarRepository implements CalendarRepositoryInterface
             foreach ($week as $day) {
                 $entities[] = new CalendarDayEntity(
                     (int) $day->format('d'), $monthCalendar->includes($day),
-                    (int) $day->format('u')
+                    (int) $day->format('U')
                 );
             }
         }
