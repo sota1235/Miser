@@ -15,8 +15,8 @@ const CalendarFooter = ({ onClickPrev, onClickNext }) => (
 );
 
 CalendarFooter.propTypes = {
-  onClickPrev: PropTypes.func.required,
-  onClickNext:: PropTypes.func.required,
+  onClickPrev : PropTypes.func.required,
+  onClickNext : PropTypes.func.required,
 };
 
 export default CalendarFooter;
