@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 const CalendarFooterContainer = connect(mapStateToProps, mapDispatchToProps)(CalendarFooterComponent);
 
-export default CalendarFooterComponent;
+export default CalendarFooterContainer;
