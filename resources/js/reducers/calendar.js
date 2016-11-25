@@ -34,9 +34,9 @@ const day = (state, action) => ({
 
 /**
  * @description Make state of calendar.
- * @param {Object} state
+ * @param {array} state
  * @param {Object} action
- * @return {Object}
+ * @return {array}
  */
 const calendar = (state = [], action) => {
   switch (action.type) {
