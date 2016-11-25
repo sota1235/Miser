@@ -22,8 +22,6 @@ class CalendarController extends Controller
         $monthData = $isCurrent ?
             $calendarService->getCurrentMonth() : $calendarService->getMonth($year, $month);
 
-        return $this->render('index', [
-            'month' => $monthData,
-        ]);
+        return $this->json($monthData);
     }
 }
