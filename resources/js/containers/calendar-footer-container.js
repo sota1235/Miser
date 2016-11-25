@@ -5,7 +5,13 @@ import {connect} from 'react-redux';
 import CalendarFooterComponent from 'components/calendar-footer-component';
 import {goToPrevMonth, goToNextMonth} from 'actions/actions';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = () => ({
+  // TODO: implement
+  prevYear: 2016,
+  prevMonth: 7,
+  nextYear: 2016,
+  nextMonth: 9,
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClickPrev() {
