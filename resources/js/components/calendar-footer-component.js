@@ -3,22 +3,20 @@
  */
 import React, { PropTypes } from 'react';
 
-const CalendarFooter = ({ links }) => (
+const CalendarFooter = ({ onClickPrev, onClickNext }) => (
   <div className="level calendar-bar">
-    <div className="level-left button is-primary is-outlined">
-      <a href={ links.prevMonth }>前の月</a>
+    <div className="level-left button is-primary is-outlined" onClick={onClickPrev}>
+      前の月
     </div>
-    <div className="level-right button is-primary is-outlined">
-      <a href={ links.nextMonth }>次の月</a>
+    <div className="level-right button is-primary is-outlined" onClick={onClickNext}>
+      次の月
     </div>
   </div>
 );
 
 CalendarFooter.propTypes = {
-  links: PropTypes.shape({
-    prevMonth : PropTypes.string.isRequired,
-    nextMonth : PropTypes.string.isRequired,
-  }).isRequired,
+  onClickPrev: PropTypes.func.required,
+  onClickNext:: PropTypes.func.required,
 };
 
 export default CalendarFooter;
