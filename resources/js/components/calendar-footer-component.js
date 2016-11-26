@@ -3,7 +3,7 @@
  */
 import React, { PropTypes } from 'react';
 
-const CalendarFooter = ({ prevMonth, nextMonth, onClickPrev, onClickNext }) => (
+const CalendarFooter = ({ onClickPrev, onClickNext }) => (
   <div className="level calendar-bar">
     <div className="level-left button is-primary is-outlined" onClick={onClickPrev}>
       前の月
@@ -15,14 +15,6 @@ const CalendarFooter = ({ prevMonth, nextMonth, onClickPrev, onClickNext }) => (
 );
 
 CalendarFooter.propTypes = {
-  prevMonth : PropTypes.shape({
-    year  : PropTypes.number.isRequired,
-    month : PropTypes.number.isRequired,
-  }),
-  nextMonth : PropTypes.shape({
-    year  : PropTypes.number.isRequired,
-    month : PropTypes.number.isRequired,
-  }),
   onClickPrev : PropTypes.func,
   onClickNext : PropTypes.func,
 };
