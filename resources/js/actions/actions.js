@@ -5,28 +5,18 @@ import * as ActionNames from 'actions/action-types';
 
 /**
  * @description Dispatch going to prev month.
- * @param {number} year
- * @param {number} month
  * @return {Object}
  */
-export function goToPrevMonth(year, month) {
-  return {
-    type: ActionNames.GO_TO_PREV_MONTH,
-    year, month,
-  };
+export function goToPrevMonth() {
+  return { type: ActionNames.GO_TO_PREV_MONTH };
 }
 
 /**
  * @description Dispatch going to next month.
- * @param {number} year
- * @param {number} month
  * @return {Object}
  */
-export function goToNextMonth(year, month) {
-  return {
-    type: ActionNames.GO_TO_NEXT_MONTH,
-    year, month,
-  };
+export function goToNextMonth() {
+  return { type: ActionNames.GO_TO_NEXT_MONTH };
 }
 
 /**
