@@ -11,8 +11,8 @@ import * as routes from 'config/routes';
  * @return {Promise<Array|Error>}
  */
 async function getCalendar(year = null, month = null) {
-  const query = (isNull(year) && isNull(month)) ? {} : {year, month};
-  const response = await axios.get(routes.getCalendar, query);
+  const params = (isNull(year) && isNull(month)) ? {} : {year, month};
+  const response = await axios.get(routes.getCalendar, {params});
 
   return response.data;
 }
