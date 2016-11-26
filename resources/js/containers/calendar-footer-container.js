@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(goToPrevMonth());
   },
   onClickNext() {
-    dispatch(goToPrevMonth());
+    dispatch(goToNextMonth());
   },
 });
 
