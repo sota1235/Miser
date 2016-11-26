@@ -8,9 +8,13 @@ import getCalendar from 'webutils/ajax/get-calendar';
 const updateCalendarMiddleware = store => next => async action => {
   if (action.type === ActionNames.GO_TO_PREV_MONTH
     || action.type === ActionNames.GO_TO_NEXT_MONTH) {
-    const {year, month} = action;
+
+    const result = next(action);
+    console.log(store);
+    const {year, month} = store.getState().currentCalendar;
     const calendar = await getCalendar(year, month);
     store.dispatch(updateCalendar(calendar));
+    return result;
   }
 
   return next(action);
