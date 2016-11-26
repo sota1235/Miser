@@ -6,36 +6,40 @@
 
 namespace Miser\Service;
 
-use Carbon\Carbon;
-use CalendR\Calendar;
+use Miser\Repositories\CalendarRepositoryInterface;
 
 /**
  * Class CalendarService
  */
 class CalendarService
 {
-    /** @var Calendar */
-    protected $factory;
+    /** @var CalendarRepositoryInterface */
+    protected $calendar;
 
     /**
-     * @param Calendar  $calendar
+     * @param CalendarRepositoryInterface  $calendar
      */
-    public function __construct(Calendar $calendar)
+    public function __construct(CalendarRepositoryInterface $calendar)
     {
-        $this->factory = $calendar;
+        $this->calendar = $calendar;
     }
 
     /**
      * Get data of the current month.
      *
-     * @return Calendar
+     * @return array
      */
     public function getCurrentMonth()
     {
-        /** @var Carbon */
-        $now = Carbon::now();
+        $currentMonthDays = $this->calendar->getCurrentMonthDays();
 
-        return $this->factory->getMonth($now->year, $now->month);
+        $response = [];
+
+        foreach ($currentMonthDays as $day) {
+            $response[] = $day->toArray();
+        }
+
+        return $response;
     }
 
     /**
@@ -44,10 +48,16 @@ class CalendarService
      * @param int  $year
      * @param int  $month
      *
-     * @return Calendar
+     * @return array
      */
     public function getMonth($year, $month)
     {
-        return $this->factory->getMonth($year, $month);
+        $monthDays = $this->calendar->getMonthDays($year, $month);
+
+        foreach ($monthDays as $day) {
+            $response[] = $day->toArray();
+        }
+
+        return $response;
     }
 }

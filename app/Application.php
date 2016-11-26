@@ -10,6 +10,7 @@ use Pimple\Container;
 use CalendR\Calendar;
 use Miser\Service\SampleService;
 use Miser\Service\CalendarService;
+use Miser\Repositories as Repo;
 
 class Application extends DCApplication
 {
@@ -23,6 +24,8 @@ class Application extends DCApplication
 
     public function config(Container $container)
     {
+        $this->bindRepositoryInterfaces($container);
+
         // setup container or services here
         $container['service.sample'] = function () use ($container)  {
             $sample_service = new SampleService();
@@ -32,12 +35,24 @@ class Application extends DCApplication
         };
 
         $container['service.calendar'] = function ($c) {
-            $calendarService = new CalendarService($c['calendar']);
+            $calendarService = new CalendarService($c[Repo\CalendarRepositoryInterface::class]);
 
             return $calendarService;
         };
 
         $this->detectConfigForTwit($container);
+    }
+
+    /**
+     * RepositoryのInterfaceをbind
+     *
+     * @param Container  $container
+     */
+    protected function bindRepositoryInterfaces(Container $container)
+    {
+        $container[Repo\CalendarRepositoryInterface::class] = function ($container) {
+            return new Repo\CalendarRepository($container['calendar']);
+        };
     }
 
     /**

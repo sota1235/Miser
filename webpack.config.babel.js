@@ -2,6 +2,7 @@
  * @fileoverview Config for webpack.
  */
 import webpack from 'webpack';
+import path from 'path';
 
 const DEBUG = !(process.env.NODE_ENV === 'production');
 
@@ -10,7 +11,7 @@ export default {
   watchOptions: {
     poll: 500,
   },
-  entry: './resources/js/app.js',
+  entry: ['babel-polyfill', './resources/js/app.js'],
   output: {
     path: 'webroot/public',
     filename: 'app.js',
@@ -25,7 +26,10 @@ export default {
     ],
   },
   resolve: {
-    root: ['node_modules', 'resources/js'],
+    root: [
+      path.resolve('./node_modules'),
+      path.resolve('./resources/js'),
+    ],
     extensions: ['', '.js'],
   },
   devtool: DEBUG ? '#source-map' : false,
