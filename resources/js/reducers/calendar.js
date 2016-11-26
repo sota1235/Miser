@@ -1,8 +1,7 @@
 /**
  * @fileoverview Reducer for changing calendar state.
  */
-import {uniqueId} from 'lodash';
-import * as ActionNames from 'actions/action-types';
+import {UPDATE_CALENDAR} from 'actions/action-types';
 
 /**
  * @description Change state of the data of the day.
@@ -24,7 +23,7 @@ const day = (state, action) => ({
  */
 const calendar = (state = [], action) => {
   switch (action.type) {
-    case ActionNames.UPDATE_CALENDAR:
+    case UPDATE_CALENDAR:
       return action.calendar;
     default:
       return state;
