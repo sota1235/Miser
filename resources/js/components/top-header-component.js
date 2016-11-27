@@ -10,9 +10,9 @@ const TopHeader = ({ year, month }) => (
   </div>
 );
 
-CalendarFooter.propTypes = {
-  onClickPrev : PropTypes.string.isRequired,
-  onClickNext : PropTypes.string.isRequired,
+TopHeader.propTypes = {
+  year  : PropTypes.number.isRequired,
+  month : PropTypes.number.isRequired,
 };
 
 export default TopHeader;
