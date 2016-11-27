@@ -2,12 +2,13 @@
  * @fileoverview Route component for app.
  */
 import React          from 'react';
+import TopHeader      from 'containers/top-header-container';
 import Calendar       from 'containers/calendar-container';
 import CalendarFooter from 'containers/calendar-footer-container';
 
 const App = () => (
   <div className="miser-app">
-    <p>Miser</p>
+    <TopHeader />
     <Calendar />
     <CalendarFooter />
   </div>
