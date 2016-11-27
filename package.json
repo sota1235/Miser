@@ -2,7 +2,6 @@
   "name": "miser",
   "private": true,
   "scripts": {
-    "export-node-path": "export NODE_PATH=./resources/js",
     "export:css": "cp ./node_modules/bulma/css/bulma.css ./webroot/public",
     "build:js": "webpack --colors --progress",
     "build:css": "npm run export:css && stylus ./resources/stylus/index.styl -o ./webroot/public",
@@ -11,7 +10,7 @@
     "watch:css": "npm run build:css -- -w",
     "watch": "npm run watch:js & npm run watch:css",
     "lint": "eslint --fix ./resources/js",
-    "test": "npm run export-node-path && mocha --opts ./resources/js/tests/mocha.opts --recursive ./resources/js/tests/**/*-test.js"
+    "test": "NODE_PATH=./resources/js mocha --opts ./resources/js/tests/mocha.opts --recursive ./resources/js/tests/**/*-test.js"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
