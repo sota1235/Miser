@@ -12,8 +12,8 @@ const Calendar = ({ calendars }) => (
       <li>We</li>
       <li>Th</li>
       <li>Fr</li>
-      <li>Sa</li>
-      <li>Su</li>
+      <li className="saturday">Sa</li>
+      <li className="sunday">Su</li>
     </ul>
 
     <ul className="days">
