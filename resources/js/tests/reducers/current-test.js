@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import currentCalendar from 'reducers/current';
-import {GO_TO_PREV_MONTH, GO_TO_NEXT_MONTH} from 'actions/action-types';
+import { GO_TO_PREV_MONTH, GO_TO_NEXT_MONTH } from 'actions/action-types';
 
 describe('Unit test for reducers/current', () => {
   it('Shold return prev month with GO_TO_PREV_MONTH action', () => {

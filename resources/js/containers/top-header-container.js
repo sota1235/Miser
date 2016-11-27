@@ -1,7 +1,7 @@
 /**
  * @fileoverview Container for top-header-component.
  */
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import TopHeaderComponent from 'components/top-header-component';
 
 const mapStateToProps = state => ({

@@ -2,7 +2,7 @@
  * @fileoverview Reducer for data of current calendar.
  */
 import moment from 'moment';
-import {GO_TO_PREV_MONTH, GO_TO_NEXT_MONTH} from 'actions/action-types';
+import { GO_TO_PREV_MONTH, GO_TO_NEXT_MONTH } from 'actions/action-types';
 
 /** @var {Moment} Current date. */
 const currentDate = moment();

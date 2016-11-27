@@ -2,7 +2,7 @@
  * @description Logs all actions and states after they are dispatched.
  */
 
-const logger = store => next => action => {
+const logger = store => next => (action) => {
   console.group(action.type);
   console.info('dispatching', action);
   const result = next(action);

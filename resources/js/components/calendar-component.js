@@ -17,14 +17,14 @@ const Calendar = ({ calendars }) => (
     </ul>
 
     <ul className="days">
-      {calendars.map(calendar => {
+      {calendars.map((calendar) => {
         const { isCurrent, timestamp, day } = calendar;
         return (
           <CalendarDay
-            isCurrent={ isCurrent }
-            timestamp={ timestamp }
-            key={ timestamp }
-            day={ day }
+            isCurrent={isCurrent}
+            timestamp={timestamp}
+            key={timestamp}
+            day={day}
           />
         );
       })}

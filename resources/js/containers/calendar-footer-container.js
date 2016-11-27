@@ -1,9 +1,9 @@
 /**
  * @fileoverview Container for calendar-footer-component.
  */
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import CalendarFooterComponent from 'components/calendar-footer-component';
-import {goToPrevMonth, goToNextMonth} from 'actions/actions';
+import { goToPrevMonth, goToNextMonth } from 'actions/actions';
 
 const mapStateToProps = () => ({});
 

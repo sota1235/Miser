@@ -1,7 +1,7 @@
 /**
  * @fileoverview Reducer for changing calendar state.
  */
-import {UPDATE_CALENDAR} from 'actions/action-types';
+import { UPDATE_CALENDAR } from 'actions/action-types';
 
 /**
  * @description Change state of the data of the day.
