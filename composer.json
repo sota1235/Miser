@@ -5,7 +5,8 @@
     "phpunit/phpunit": "5.1.x",
     "fabpot/php-cs-fixer": "1.x",
     "phpunit/php-code-coverage": "3.x",
-    "mockery/mockery": "^0.9.6"
+    "mockery/mockery": "^0.9.6",
+    "robmorgan/phinx": "^0.6.5"
   },
   "license": "MIT",
   "require": {
