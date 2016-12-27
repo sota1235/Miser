@@ -23,6 +23,7 @@
     ]
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "phpunit",
+    "migrate": "phinx migrate -e development"
   }
 }
