@@ -7,7 +7,7 @@ class PagesTable extends AbstractMigration
     /**
      * Migrate up.
      */
-    public function change()
+    public function up()
     {
         $table = $this->table('pages', ['id' => 'page_id']);
         $table->addColumn('page_name', 'string', ['limit' => 20])
