@@ -1,6 +1,8 @@
 Miser
 ====
 
+[![Build Status](https://travis-ci.org/sota1235/Miser.svg?branch=master)](https://travis-ci.org/sota1235/Miser)
+
 Simple household account book.
 
 ### Description
