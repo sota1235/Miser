@@ -11,6 +11,8 @@ use CalendR\Calendar;
 use Miser\Service\SampleService;
 use Miser\Service\CalendarService;
 use Miser\Repositories as Repo;
+use Doctrine\DBAL\Configuration;
+use Doctrine\DBAL\DriverManager;
 
 class Application extends DCApplication
 {
@@ -25,6 +27,7 @@ class Application extends DCApplication
     public function config(Container $container)
     {
         $this->bindRepositoryInterfaces($container);
+        $this->detectDatabaseConnection($container);
 
         // setup container or services here
         $container['service.sample'] = function () use ($container)  {
@@ -69,5 +72,24 @@ class Application extends DCApplication
         });
 
         $renderer->addFunction($redirectToCalendarFunction);
+    }
+
+    /**
+     * Getting database connection.
+     *
+     * @param Container  $container
+     */
+    protected function detectDatabaseConnection(Container $container)
+    {
+        $container['db'] = function ($c) {
+            // TODO: Get config from .env or config files.
+            $conn = [
+                'driver' => 'pdo_sqlite',
+                'path'   => __DIR__.'/../storage/database.sqlite',
+            ];
+            $config = new Configuration([\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC]);
+
+            return DriverManager::getConnection($conn, $config);
+        };
     }
 }
