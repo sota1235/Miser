@@ -12,7 +12,8 @@
   "require": {
     "dietcube/dietcube": "1.0.x",
     "yohang/calendr": "^2.0",
-    "nesbot/carbon": "^1.21"
+    "nesbot/carbon": "^1.21",
+    "doctrine/dbal": "^2.5"
   },
   "autoload": {
     "psr-4": {
