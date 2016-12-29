@@ -12,4 +12,9 @@ return [
         'path' => dirname(dirname(__DIR__)) . '/tmp/app_development.log',
         'level' => Logger::DEBUG,
     ],
+
+    'database' => [
+        'driver' => 'pdo_sqlite',
+        'path'   => dirname(dirname(__DIR__)) . '/storage/database.sqlite',
+    ],
 ];
