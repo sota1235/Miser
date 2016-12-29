@@ -9,7 +9,7 @@ return [
     'debug' => true,
 
     'logger' => [
-        'path' => dirname(dirname(__DIR__)) . '/tmp/app_development.log',
+        'path' => dirname(dirname(__DIR__)) . '/storage/logs/app_development.log',
         'level' => Logger::DEBUG,
     ],
 
