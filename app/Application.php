@@ -82,11 +82,7 @@ class Application extends DCApplication
     protected function detectDatabaseConnection(Container $container)
     {
         $container['db'] = function ($c) {
-            // TODO: Get config from .env or config files.
-            $conn = [
-                'driver' => 'pdo_sqlite',
-                'path'   => __DIR__.'/../storage/database.sqlite',
-            ];
+            $conn = $this->getConfig()->get('database');
             $config = new Configuration([\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC]);
 
             return DriverManager::getConnection($conn, $config);
