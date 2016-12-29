@@ -56,6 +56,14 @@ class Application extends DCApplication
         $container[Repo\CalendarRepositoryInterface::class] = function ($container) {
             return new Repo\CalendarRepository($container['calendar']);
         };
+
+        $container[Repo\MiserRepositoryInterface::class] = function ($container) {
+            $repository = new Repo\MiserRepository(
+                new \Miser\DataAccess\Fluent\Miser($container['db'])
+            );
+            $repository->setLogger($container['logger']);
+            return $repository;
+        };
     }
 
     /**
