@@ -14,11 +14,13 @@ use Doctrine\DBAL\Query\QueryBuilder;
  */
 abstract class FluentDatabase
 {
-    /** @var string */
-    protected $table;
-
     /** @var Connection */
     protected $connection;
+
+    /**
+     * @return string  Table name.
+     */
+    abstract protected function table();
 
     /**
      * @param Connection  $connection
