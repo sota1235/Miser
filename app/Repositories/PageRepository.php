@@ -7,12 +7,15 @@
 namespace Miser\Repositories;
 
 use Miser\DataAccess\Fluent\Page;
+use Dietcube\Components\LoggerAwareTrait;
 
 /**
  * Class PageRepository
  */
 class PageRepository implements PageRepositoryInterface
 {
+    use LoggerAwareTrait;
+
     /** @var Page */
     protected $page;
 
@@ -30,6 +33,13 @@ class PageRepository implements PageRepositoryInterface
      */
     public function addPage(string $pageName)
     {
-        return !!$this->page->add($pageName);
+        try {
+            $result = !!$this->page->add($pageName);
+        } catch (\Exception $e) {
+            $this->logger->log($e->getMessage());
+            $result = false;
+        }
+
+        return $result;
     }
 }
