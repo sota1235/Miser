@@ -64,6 +64,14 @@ class Application extends DCApplication
             $repository->setLogger($container['logger']);
             return $repository;
         };
+
+        $container[Repo\PageRepositoryInterface::class] = function ($container) {
+            $repository = new Repo\PageRepository(
+                new \Miser\DataAccess\Fluent\Page($container['db'])
+            );
+            $repository->setLogger($container['logger']);
+            return $repository;
+        };
     }
 
     /**
