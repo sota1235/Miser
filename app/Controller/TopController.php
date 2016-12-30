@@ -10,8 +10,8 @@ use Dietcube\Controller;
 
 class TopController extends Controller
 {
-    public function index()
+    public function index($page)
     {
-        return $this->render('index');
+        return $this->render('index', compact('page'));
     }
 }
