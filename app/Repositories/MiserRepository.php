@@ -47,15 +47,22 @@ class MiserRepository implements MiserRepositoryInterface
     }
 
     /**
-     * @param string  $pageName
-     * @param int     $year
-     * @param int     $month
-     * @param int     $day
-     * @param bool    $status
+     * @param int   $pageId
+     * @param int   $year
+     * @param int   $month
+     * @param int   $day
+     * @param bool  $status
      * @return bool
      */
-    public function addMiser(string $pageName, int $year, int $month, int $day, bool $status)
+    public function addMiser(int $pageId, int $year, int $month, int $day, bool $status)
     {
-        // TODO: implement
+        try {
+            $result = $this->miser->add($pageId, $year, $month, $day, $status);
+        } catch (\Exception $e) {
+            $this->logger->log($e->getMessage());
+            $result = false;
+        }
+
+        return !!$result;
     }
 }
