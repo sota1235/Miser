@@ -3,4 +3,4 @@
  */
 
 /** @type {string} Getting calendar data endpoint. */
-export const getCalendar = '/calendar';
+export const getCalendar = '/api/calendar';
