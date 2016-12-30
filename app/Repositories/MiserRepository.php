@@ -37,9 +37,17 @@ class MiserRepository implements MiserRepositoryInterface
     public function getMisers(string $pageName, int $year, int $month)
     {
         try {
-            $misers = $this->miser->getMisers($pageName, $year, $month);
+            $records = $this->miser->getMisers($pageName, $year, $month);
+            $misers  = [];
+
+            foreach ($records as $record) {
+                $misers[] = new MiserEntity(
+                    $record['miser_id'], $record['year'], $record['month'],
+                    $record['day'], !!$record['status']
+                );
+            }
         } catch (\Exception $e) {
-            $this->logger->log($e->getMessage());
+            $this->logger->log(\Psr\Log\LogLevel::ERROR, $e->getMessage());
             $misers = [];
         }
 
@@ -59,7 +67,7 @@ class MiserRepository implements MiserRepositoryInterface
         try {
             $result = $this->miser->add($pageId, $year, $month, $day, $status);
         } catch (\Exception $e) {
-            $this->logger->log($e->getMessage());
+            $this->logger->log(\Psr\Log\LogLevel::ERROR, $e->getMessage());
             $result = false;
         }
 
