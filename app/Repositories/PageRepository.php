@@ -45,7 +45,7 @@ class PageRepository implements PageRepositoryInterface
                 $result['page_id'], $result['page_name'], $result['created']
             );
         } catch (\Exception $e) {
-            $this->logger->log($e->getMessage());
+            $this->logger->log(\Psr\Log\LogLevel::ERROR, $e->getMessage());
             return null;
         }
     }
@@ -59,7 +59,7 @@ class PageRepository implements PageRepositoryInterface
         try {
             $result = !!$this->page->add($pageName);
         } catch (\Exception $e) {
-            $this->logger->log($e->getMessage());
+            $this->logger->log(\Psr\Log\LogLevel::ERROR, $e->getMessage());
             $result = false;
         }
 
