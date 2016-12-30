@@ -116,5 +116,7 @@ class Miser extends FluentDatabase
             ->setParameter(1, $dateId)
             ->setParameter(2, $pageId)
             ->execute();
+
+        return $result;
     }
 }
