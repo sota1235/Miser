@@ -77,19 +77,35 @@ class Miser extends FluentDatabase
      */
     public function add(int $pageId, int $year, int $month, int $day, bool $status)
     {
-        $dateId = $this->builder()
-            ->select('date_id')
-            ->from('dates', 'd')
-            ->where('d.year=?')
-            ->andWhere('d.month=?')
-            ->andWhere('d.day=?')
-            ->setParameter(0, $year)
-            ->setParameter(0, $month)
-            ->setParameter(0, $day)
-            ->execute()
-            ->fetch();
+        /**
+         * @param int  $year
+         * @param int  $month
+         * @param int  $day
+         * @return string|null
+         */
+        $getDateId = function (int $year, int $month, int $day) {
+            $result = $this->builder()
+                ->select('date_id')
+                ->from('dates', 'd')
+                ->where('d.year=?')
+                ->andWhere('d.month=?')
+                ->andWhere('d.day=?')
+                ->setParameter(0, $year)
+                ->setParameter(1, $month)
+                ->setParameter(2, $day)
+                ->execute()
+                ->fetch();
 
-        if (is_null($dateId)) {
+            if (!$result) {
+                return null;
+            }
+
+            return $result['date_id'];
+        };
+
+        $dateId = $getDateId($year, $month, $day);
+
+        if (!$dateId) {
             $this->builder()
                 ->insert('dates')
                 ->values([
@@ -98,11 +114,10 @@ class Miser extends FluentDatabase
                     'day'   => '?',
                 ])
                 ->setParameter(0, $year)
-                ->setParameter(0, $month)
-                ->setParameter(0, $day)
-                ->execute()
-                ->fetch();
-            $dateId = $this->conn->lastInsertId();
+                ->setParameter(1, $month)
+                ->setParameter(2, $day)
+                ->execute();
+            $dateId = $getDateId($year, $month, $day);
         }
 
         $result = $this->builder()
