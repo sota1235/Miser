@@ -8,7 +8,6 @@ namespace Miser;
 use Dietcube\Application as DCApplication;
 use Pimple\Container;
 use CalendR\Calendar;
-use Miser\Services\SampleService;
 use Miser\Services\CalendarService;
 use Miser\Repositories as Repo;
 use Doctrine\DBAL\Configuration;
@@ -30,13 +29,6 @@ class Application extends DCApplication
         $this->detectDatabaseConnection($container);
 
         // setup container or services here
-        $container['service.sample'] = function () use ($container)  {
-            $sample_service = new SampleService();
-            $sample_service->setLogger($container['logger']);
-
-            return $sample_service;
-        };
-
         $container['service.calendar'] = function ($c) {
             $calendarService = new CalendarService($c[Repo\CalendarRepositoryInterface::class]);
 
