@@ -4,7 +4,7 @@
  * @copyright (c) sota1235
  */
 
-namespace Miser\Service;
+namespace Miser\Services;
 
 use Miser\Repositories\CalendarRepositoryInterface;
 

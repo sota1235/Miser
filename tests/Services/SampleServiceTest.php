@@ -1,6 +1,6 @@
 <?php
 
-namespace Miser\Service;
+namespace Miser\Services;
 
 class SampleServiceTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Miser\Service;
+namespace Miser\Services;
 
 use Dietcube\Components\LoggerAwareTrait;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Miser\Service;
+namespace Miser\Services;
 
 use Mockery as m;
 use Mockery\MockInterface as i;
-use Miser\Service\CalendarService;
+use Miser\Services\CalendarService;
 use Miser\Entities\CalendarDayEntity;
 use Miser\Repositories\CalendarRepositoryInterface;
 
