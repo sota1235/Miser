@@ -23,7 +23,7 @@ const contentStyle = {
 const CalendarModal = ({ isOpen, onRequestClose }) => (
   <ReactModal
     isOpen={isOpen}
-    contentLabel=''
+    contentLabel=""
     onRequestClose={onRequestClose}
     style={{
       content: contentStyle,

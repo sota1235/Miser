@@ -5,20 +5,17 @@ import React, { PropTypes } from 'react';
 import CalendarModal        from './calendar-modal-component';
 
 /**
+ * @Class CalendarDay
  * @param {boolean} isCurrent
- * @param {int} timestamp
  * @param {int} day
- * @param {boolean} isOpen
- * @return {React.Component}
  */
 class CalendarDay extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen,
-    }
-
+      isOpen: false,
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -29,7 +26,7 @@ class CalendarDay extends React.Component {
   }
 
   render() {
-    const { isCurrent, timestamp, day } = this.props;
+    const { isCurrent, day } = this.props;
 
     return (
       <li
@@ -43,11 +40,10 @@ class CalendarDay extends React.Component {
       </li>
     );
   }
-};
+}
 
 CalendarDay.propTypes = {
   isCurrent : PropTypes.bool.isRequired,
-  timestamp : PropTypes.number.isRequired,
   day       : PropTypes.number.isRequired,
 };
 

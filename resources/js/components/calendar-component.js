@@ -25,7 +25,6 @@ const Calendar = ({ calendars }) => (
             timestamp={timestamp}
             key={timestamp}
             day={day}
-            isOpen={false}
           />
         );
       })}

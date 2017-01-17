@@ -4,18 +4,6 @@
 import { UPDATE_CALENDAR } from 'actions/action-types';
 
 /**
- * @description Change state of the data of the day.
- * @param {Object} state
- * @param {Object} action
- * @return {Object} state
- */
-const day = (state, action) => ({
-  day       : action.day,
-  isCurrent : action.isCurrent,
-  timestamp : action.timestamp,
-});
-
-/**
  * @description Make state of calendar.
  * @param {array} state
  * @param {Object} action

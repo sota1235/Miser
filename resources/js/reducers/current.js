@@ -19,8 +19,8 @@ const initialState = {
  * @return {Object}
  */
 function getNextMonth(year, month) {
-  const currentDate = moment(`${year}-${month}`, 'YYYY-MM');
-  const nextMonth = currentDate.add(1, 'M');
+  const current = moment(`${year}-${month}`, 'YYYY-MM');
+  const nextMonth = current.add(1, 'M');
   return {
     year  : nextMonth.year(),
     month : nextMonth.month() + 1,
@@ -34,8 +34,8 @@ function getNextMonth(year, month) {
  * @return {Object}
  */
 function getPrevMonth(year, month) {
-  const currentDate = moment(`${year}-${month}`, 'YYYY-MM');
-  const prevMonth = currentDate.subtract(1, 'M');
+  const current = moment(`${year}-${month}`, 'YYYY-MM');
+  const prevMonth = current.subtract(1, 'M');
   return {
     year  : prevMonth.year(),
     month : prevMonth.month() + 1,
@@ -50,18 +50,20 @@ function getPrevMonth(year, month) {
  */
 const currentCalendar = (state = initialState, action) => {
   switch (action.type) {
-    case GO_TO_PREV_MONTH:
+    case GO_TO_PREV_MONTH: {
       const prevMonth = getPrevMonth(state.year, state.month);
       return {
         year  : prevMonth.year,
         month : prevMonth.month,
       };
-    case GO_TO_NEXT_MONTH:
+    }
+    case GO_TO_NEXT_MONTH: {
       const nextMonth = getNextMonth(state.year, state.month);
       return {
         year  : nextMonth.year,
         month : nextMonth.month,
       };
+    }
     default:
       return state;
   }

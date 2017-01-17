@@ -7,7 +7,7 @@ import { goToPrevMonth, goToNextMonth } from 'actions/actions';
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   onClickPrev() {
     dispatch(goToPrevMonth());
   },
@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-const CalendarFooterContainer = connect(mapStateToProps, mapDispatchToProps)(CalendarFooterComponent);
+const CalendarFooterContainer =
+  connect(mapStateToProps, mapDispatchToProps)(CalendarFooterComponent);
 
 export default CalendarFooterContainer;
