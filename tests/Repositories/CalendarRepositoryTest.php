@@ -2,11 +2,8 @@
 
 namespace Miser\Repositories;
 
-use Carbon\Carbon;
 use CalendR\Calendar;
-use CalendR\Period\Month;
 use Miser\Entities\CalendarDayEntity;
-use Miser\Repositories\CalendarRepository;
 
 class CalendarRepositoryTest extends \PHPUnit_Framework_TestCase
 {

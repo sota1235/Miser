@@ -2,8 +2,6 @@
 
 namespace Miser\Entities;
 
-use Miser\Entities\MiserEntity;
-
 class MiserEntityTest extends \PHPUnit_Framework_TestCase
 {
     public function testShouldSuccessWithValidParameter()

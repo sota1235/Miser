@@ -6,8 +6,6 @@
 
 namespace Miser\Entities;
 
-use Miser\Exceptions\InvalidEntityParameterException;
-
 /**
  * Class Entity
  */

@@ -2,8 +2,6 @@
 
 namespace Miser\Entities;
 
-use Miser\Entities\CalendarDayEntity;
-
 class CalendarDayEntityTest extends \PHPUnit_Framework_TestCase
 {
     public function testShouldSuccessWithValidParameter()
@@ -29,6 +27,7 @@ class CalendarDayEntityTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($calendarDay->toArray(), compact('day', 'isCurrent', 'timestamp'));
     }
+
     /**
      * @dataProvider getInvalidParameters
      * @expectedException Miser\Exceptions\InvalidEntityParameterException

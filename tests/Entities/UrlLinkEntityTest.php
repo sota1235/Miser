@@ -2,8 +2,6 @@
 
 namespace Miser\Entities;
 
-use Miser\Entities\UrlLinkEntity;
-
 class UrlLinkEntityTest extends \PHPUnit_Framework_TestCase
 {
     public function testShouldSuccessWithValidParameter()

@@ -7,7 +7,6 @@ use Mockery\MockInterface as i;
 use Psr\Log\LoggerInterface;
 use Miser\Entities\PageEntity;
 use Miser\DataAccess\Fluent\Page;
-use Miser\Repositories\PageRepository;
 
 class PageRepositoryTest extends \PHPUnit_Framework_TestCase
 {

@@ -9,12 +9,12 @@ return [
     'debug' => true,
 
     'logger' => [
-        'path' => dirname(dirname(__DIR__)) . '/storage/logs/app.log',
+        'path' => dirname(dirname(__DIR__)).'/storage/logs/app.log',
         'level' => Logger::WARNING,
     ],
 
     'database' => [
         'driver' => 'pdo_sqlite',
-        'path'   => dirname(dirname(__DIR__)) . '/storage/database.sqlite',
+        'path'   => dirname(dirname(__DIR__)).'/storage/database.sqlite',
     ],
 ];

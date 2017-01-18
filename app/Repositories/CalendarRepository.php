@@ -9,7 +9,6 @@ namespace Miser\Repositories;
 use Carbon\Carbon;
 use CalendR\Calendar;
 use Miser\Entities\CalendarDayEntity;
-use Miser\Repositories\CalendarRepositoryInterface;
 
 /**
  * Class CalendarRepository
