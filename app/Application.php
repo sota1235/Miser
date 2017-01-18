@@ -54,6 +54,7 @@ class Application extends DCApplication
                 new \Miser\DataAccess\Fluent\Miser($container['db'])
             );
             $repository->setLogger($container['logger']);
+
             return $repository;
         };
 
@@ -62,6 +63,7 @@ class Application extends DCApplication
                 new \Miser\DataAccess\Fluent\Page($container['db'])
             );
             $repository->setLogger($container['logger']);
+
             return $repository;
         };
     }

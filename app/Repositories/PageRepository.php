@@ -46,6 +46,7 @@ class PageRepository implements PageRepositoryInterface
             );
         } catch (\Exception $e) {
             $this->logger->log(\Psr\Log\LogLevel::ERROR, $e->getMessage());
+
             return null;
         }
     }
