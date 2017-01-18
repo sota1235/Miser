@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "require": {
+    "php": ">=7.0.0",
     "dietcube/dietcube": "1.0.x",
     "yohang/calendr": "^2.0",
     "nesbot/carbon": "^1.21",
