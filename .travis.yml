@@ -12,5 +12,6 @@ before_script:
 script:
   - composer lint
   - composer test
+  - npm i
   - npm run lint
-  - npm i && npm run test
+  - npm run test
