@@ -5,7 +5,7 @@ php:
 
 before_script:
   - composer install --dev --no-interaction --prefer-source
-  - nvm use v6.9.2
+  - nvm install v6.9.2
 
 script:
   - composer lint
