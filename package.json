@@ -10,6 +10,7 @@
     "watch:css": "npm run build:css -- -w",
     "watch": "npm run watch:js & npm run watch:css",
     "lint": "eslint --fix ./resources/js",
+    "flow": "flow resources/js",
     "test": "NODE_PATH=./resources/js mocha --opts ./resources/js/tests/mocha.opts --recursive ./resources/js/tests/**/*-test.js"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "flow-bin": "^0.38.0",
     "mocha": "^3.1.2",
     "power-assert": "^1.4.1",
     "proxyquire": "^1.7.10",
