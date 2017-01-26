@@ -3,6 +3,7 @@
   "plugins": [
     "add-module-exports",
     "transform-inline-environment-variables",
-    "transform-async-to-generator"
+    "transform-async-to-generator",
+    "transform-flow-strip-types"
   ]
 }
