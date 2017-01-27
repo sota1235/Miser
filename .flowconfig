@@ -1,5 +1,5 @@
 [include]
-./resources/js/**/*.js
+<PROJECT_ROOT>/resources/js/**/*.js
 [ignore]
-./node_modules
-./vendor
+<PROJECT_ROOT>/node_modules
+<PROJECT_ROOT>/vendor
