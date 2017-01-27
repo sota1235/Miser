@@ -11,13 +11,16 @@ import CalendarModal        from './calendar-modal-component';
  * @param {int} day
  */
 class CalendarDay extends React.Component {
+  state: {
+    isOpen: boolean,
+  }
+
   constructor(props) {
     super(props);
 
     this.state = {
       isOpen: false,
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
@@ -37,7 +40,7 @@ class CalendarDay extends React.Component {
         onClick={this.handleClick}
       >
         { day }
-        <CalendarModal isOpen={this.state.isOpen} onRequestClose={this.handleClick} />
+        <CalendarModal isOpen={this.state.isOpen} onRequestClose={e => this.handleClick(e)} />
       </li>
     );
   }
