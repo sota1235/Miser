@@ -1,6 +1,7 @@
 [ignore]
 .*/node_modules/fbjs/.*
 <PROJECT_ROOT>/vendor
+<PROJECT_ROOT>/resources/js/tests/.*
 [options]
 module.system.node.resolve_dirname=node_modules/
 module.system.node.resolve_dirname=resources/js/
