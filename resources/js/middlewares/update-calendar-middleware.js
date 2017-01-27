@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @description Update calendar on main page.
  */

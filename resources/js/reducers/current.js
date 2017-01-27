@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Reducer for data of current calendar.
  */

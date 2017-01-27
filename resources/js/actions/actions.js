@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Action creaters for Redux.
  */

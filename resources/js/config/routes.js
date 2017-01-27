@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Routing of server.
  */

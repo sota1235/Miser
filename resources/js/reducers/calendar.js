@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Reducer for changing calendar state.
  */

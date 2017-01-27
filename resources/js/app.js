@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Main file for app.
  */

@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Modal component for miser data.
  */
