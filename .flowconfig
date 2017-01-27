@@ -1,5 +1,6 @@
-[include]
-<PROJECT_ROOT>/resources/js/**/*.js
 [ignore]
-<PROJECT_ROOT>/node_modules
+.*/node_modules/fbjs/.*
 <PROJECT_ROOT>/vendor
+[options]
+module.system.node.resolve_dirname=node_modules/
+module.system.node.resolve_dirname=resources/js/
