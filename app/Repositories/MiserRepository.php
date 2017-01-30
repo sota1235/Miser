@@ -73,4 +73,14 @@ class MiserRepository implements MiserRepositoryInterface
 
         return !!$result;
     }
+
+    /**
+     * @param int   $pageId
+     * @param int   $miserId
+     * @param bool  $status
+     */
+    public function updateMiser(int $pageId, int $miserId, bool $status)
+    {
+        // TODO: implement
+    }
 }
