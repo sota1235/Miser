@@ -11,6 +11,7 @@
     "watch": "npm run watch:js & npm run watch:css",
     "lint": "eslint --fix ./resources/js",
     "flow": "flow",
+    "apidoc": "apidoc -i app/Controller -o doc",
     "test": "NODE_PATH=./resources/js mocha --opts ./resources/js/tests/mocha.opts --recursive ./resources/js/tests/**/*-test.js"
   },
   "devDependencies": {
