@@ -23,13 +23,15 @@ Exec the command below, then you can access `localhost:8888`.
 
 ```
 cd webroot && php -S localhost:8888
+# or
+composer start-dev
 ```
 
 ### Install
 
 ```
 compsoer install
-yarn install
+yarn
 ```
 
 ### Contribution
