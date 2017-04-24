@@ -59,13 +59,13 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
     {
         $this->miser->shouldReceive('addMiser')->andReturn(true);
 
-        $this->assertTrue($this->service->addMiser(1235, 2017, 1, 30));
+        $this->assertTrue($this->service->addMiser('sota', 2017, 1, 30));
     }
 
     public function testAddMiserShouldFail()
     {
         $this->miser->shouldReceive('addMiser')->andReturn(false);
 
-        $this->assertFalse($this->service->addMiser(1235, 2017, 1, 30));
+        $this->assertFalse($this->service->addMiser('sota', 2017, 1, 30));
     }
 }
