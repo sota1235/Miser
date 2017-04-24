@@ -28,6 +28,7 @@
     "test": "phpunit",
     "migrate": "phinx migrate -e development",
     "lint": "php-cs-fixer fix --dry-run",
-    "refactor": "php-cs-fixer fix"
+    "refactor": "php-cs-fixer fix",
+    "start-dev": "cd webroot && php -S localhost:8888"
   }
 }
