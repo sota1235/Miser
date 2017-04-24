@@ -13,12 +13,12 @@ class Route implements RouteInterface
     public function definition(Container $container)
     {
         return [
-            ['GET',  '/',                                'Top::index'],
-            ['GET',  '/{page}',                          'Top::index'],
-            ['GET',  '/api/calendar',                    'Calendar::index'],
-            ['GET',  '/api/{pageName}/misers',           'Miser::getMisers'],
-            ['POST', '/api/{pageName}/miser',            'Miser::postMiser'],
-            ['PUT',  '/api/{pageName}/miser/{miserId}/', 'Miser::updateMiser'],
+            ['GET',  '/',                                 'Top::index'],
+            ['GET',  '/{page}',                           'Top::index'],
+            ['GET',  '/api/calendar',                     'Calendar::index'],
+            ['GET',  '/api/{pageName}/misers',            'Miser::getMisers'],
+            ['POST', '/api/{pageName}/misers',            'Miser::postMiser'],
+            ['PUT',  '/api/{pageName}/misers/{miserId}/', 'Miser::updateMiser'],
         ];
     }
 }
