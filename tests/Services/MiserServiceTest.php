@@ -28,7 +28,7 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
     {
         $expected = [
             [
-                'miser_id' => 1,
+                'id' => 1,
                 'year'     => 2017,
                 'month'    => 7,
                 'day'      => 1,
@@ -38,7 +38,7 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
 
         $testMiser = $expected[0];
         $miserEntity = new MiserEntity(
-            $testMiser['miser_id'], $testMiser['year'], $testMiser['month'],
+            $testMiser['id'], $testMiser['year'], $testMiser['month'],
             $testMiser['day'], $testMiser['status']
         );
         $this->miser->shouldReceive('getMisers')->andReturn([$miserEntity]);

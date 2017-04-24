@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * @copyright (c) sota1235
@@ -31,9 +32,16 @@ class MiserService
      *
      * @return array
      */
-    public function getMisers(string $pageName, string $year, string $month)
+    public function getMisers(string $pageName, int $year, int $month): array
     {
-        // TODO: implement
+        $miserEntities = $this->miser->getMisers($pageName, $year, $month);
+        $misers = [];
+
+        foreach ($miserEntities as $miserEntity) {
+            $misers[] = $miserEntity->toArray();
+        }
+
+        return $misers;
     }
 
     /**
