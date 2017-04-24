@@ -9,6 +9,7 @@ use Dietcube\Application as DCApplication;
 use Pimple\Container;
 use CalendR\Calendar;
 use Miser\Services\CalendarService;
+use Miser\Services\MiserService;
 use Miser\Repositories as Repo;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
@@ -33,6 +34,12 @@ class Application extends DCApplication
             $calendarService = new CalendarService($c[Repo\CalendarRepositoryInterface::class]);
 
             return $calendarService;
+        };
+
+        $container['service.miser'] = function ($c) {
+            $miserService = new MiserService($c[Repo\MiserRepositoryInterface::class]);
+
+            return $miserService;
         };
 
         $this->detectConfigForTwit($container);
