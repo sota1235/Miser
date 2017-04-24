@@ -42,10 +42,17 @@ class MiserController extends Controller
      */
     public function getMisers(string $pageName)
     {
-        // TODO: implement
+        $year = $this->query('year', null);
+        $month = $this->query('month', null);
 
-        $data = [
-        ];
+        // TODO validation
+
+        $year = (int) $year;
+        $month = (int) $month;
+
+        $miserService = $this->get('service.miser');
+
+        $data = $miserService->getMisers($pageName, $year, $month);
 
         return $this->json($data);
     }
@@ -121,7 +128,7 @@ class MiserController extends Controller
      * @param string  $miserId
      * @return string
      */
-    public function deleteMiser(string $pageName string $miserId)
+    public function deleteMiser(string $pageName, string $miserId)
     {
         // TODO: validation for $miserID. It must be integer.
         // TODO: implement
