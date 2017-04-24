@@ -106,4 +106,29 @@ class MiserController extends Controller
 
         return $this->json($data);
     }
+
+    /**
+     * @api {delete} /api/:pageName/misers/:miser_id Delete Miser.
+     * @apiGroup Miser
+     *
+     * @apiParam {String} pageName A page name.
+     * @apiParam {Number} miserId The ID of the miser.
+     *
+     * @apiSuccessExample {json} Success Response:
+     *  HTTP/1.1 204 OK
+     *
+     * @param string  $pageName
+     * @param string  $miserId
+     * @return string
+     */
+    public function deleteMiser(string $pageName string $miserId)
+    {
+        // TODO: validation for $miserID. It must be integer.
+        // TODO: implement
+
+        $data = [
+        ];
+
+        return $this->json($data);
+    }
 }
