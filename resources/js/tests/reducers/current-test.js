@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Unit test for reducers/current
  */

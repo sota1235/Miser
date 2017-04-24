@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Combine middlewares and export.
  */

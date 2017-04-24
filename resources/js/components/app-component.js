@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Route component for app.
  */

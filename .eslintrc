@@ -1,4 +1,8 @@
 {
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
   "extends": "airbnb",
   "env": {
     "mocha": true
@@ -30,6 +34,7 @@
     "react/prop-types": ["warn"],
     "react/jsx-filename-extension": ["off"],
     "react/no-static-element-interactions": ["off"],
+    "react/sort-comp": ["off"],
     "react/no-unused-prop-types": [
       "error",
       {

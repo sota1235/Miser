@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Calendar footer component.
  */

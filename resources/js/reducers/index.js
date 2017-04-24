@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Combine reducers and export.
  */

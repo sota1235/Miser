@@ -27,7 +27,14 @@ cd webroot && php -S localhost:8888
 
 ### Install
 
+```
+compsoer install
+yarn install
+```
+
 ### Contribution
+
+Give me the pull request :)
 
 ### Licence
 

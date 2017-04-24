@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @description Logs all actions and states after they are dispatched.
  */

@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Header component on top page.
  */

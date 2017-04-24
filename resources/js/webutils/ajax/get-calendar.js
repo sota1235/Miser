@@ -1,3 +1,4 @@
+// @flow weak
 /**
  * @fileoverview Getting calendar data from server.
  */
