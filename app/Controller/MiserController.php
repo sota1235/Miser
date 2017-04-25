@@ -80,9 +80,19 @@ class MiserController extends Controller
      */
     public function postMiser(string $pageName)
     {
-        // TODO: implement
+        $year    = (int) $this->query('year');
+        $month   = (int) $this->query('month');
+        $day     = (int) $this->query('day');
+        $isMiser = (bool) $this->query('isMiser');
+
+        // TODO validation
+
+        $miserService = $this->get('service.miser');
+
+        $miserId = $miserService->addMiser($pageName, $year, $month, $day, $isMiser);
 
         $data = [
+            'miserId' => $miserID,
         ];
 
         return $this->json($data);
