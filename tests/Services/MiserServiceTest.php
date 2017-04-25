@@ -4,13 +4,18 @@ namespace Miser\Services;
 
 use Mockery as m;
 use Mockery\MockInterface as i;
+use Miser\Entities\PageEntity;
 use Miser\Entities\MiserEntity;
 use Miser\Repositories\MiserRepositoryInterface;
+use Miser\Repositories\PageRepositoryInterface;
 
 class MiserServiceTest extends \PHPUnit_Framework_TestCase
 {
     /** @var i|MiserRepositoryInterface */
     protected $miser;
+
+    /** @var i|PageRepositoryInterface */
+    protected $page;
 
     /** @var MiserService */
     protected $service;
@@ -19,9 +24,10 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->miser= m::mock(MiserRepositoryInterface::class);
+        $this->miser = m::mock(MiserRepositoryInterface::class);
+        $this->page  = m::mock(PageRepositoryInterface::class);
 
-        $this->service = new MiserService($this->miser);
+        $this->service = new MiserService($this->miser, $this->page);
     }
 
     public function testGetMisersReturnData()
@@ -57,15 +63,28 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
 
     public function testAddMiserShouldSuccess()
     {
+        $this->page->shouldReceive('getPage')->andReturn(
+            new PageEntity(1, 'page_name', '2014-04-10')
+        );
         $this->miser->shouldReceive('addMiser')->andReturn(true);
 
-        $this->assertTrue($this->service->addMiser('sota', 2017, 1, 30));
+        $this->assertTrue($this->service->addMiser('sota', 2017, 1, 30, true));
     }
 
-    public function testAddMiserShouldFail()
+    public function testAddMiserShouldFailWithMiserRepo()
     {
+        $this->page->shouldReceive('getPage')->andReturn(
+            new PageEntity(1, 'page_name', '2014-04-10')
+        );
         $this->miser->shouldReceive('addMiser')->andReturn(false);
 
-        $this->assertFalse($this->service->addMiser('sota', 2017, 1, 30));
+        $this->assertFalse($this->service->addMiser('sota', 2017, 1, 30, false));
+    }
+
+    public function testAddMiserShouldFailWithNotExistingPage()
+    {
+        $this->page->shouldReceive('getPage')->andReturn(null);
+
+        $this->assertFalse($this->service->addMiser('sota', 2017, 1, 30, true));
     }
 }

@@ -37,7 +37,10 @@ class Application extends DCApplication
         };
 
         $container['service.miser'] = function ($c) {
-            $miserService = new MiserService($c[Repo\MiserRepositoryInterface::class]);
+            $miserService = new MiserService(
+                $c[Repo\MiserRepositoryInterface::class],
+                $c[Repo\PageRepositoryInterface::class]
+            );
 
             return $miserService;
         };

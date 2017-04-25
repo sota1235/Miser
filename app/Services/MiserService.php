@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Miser\Services;
 
+use Miser\Repositories\PageRepositoryInterface;
 use Miser\Repositories\MiserRepositoryInterface;
 
 /**
@@ -17,12 +18,19 @@ class MiserService
     /** @var MiserRepositoryInterface */
     protected $miser;
 
+    /** @var PageRepositoryInterface */
+    protected $page;
+
     /**
      * @param MiserRepositoryInterface  $miser
+     * @param PageRepositoryInterface   $page
      */
-    public function __construct(MiserRepositoryInterface $miser)
-    {
+    public function __construct(
+        MiserRepositoryInterface $miser,
+        PageRepositoryInterface $page
+    ) {
         $this->miser = $miser;
+        $this->page = $page;
     }
 
     /**
@@ -45,16 +53,28 @@ class MiserService
     }
 
     /**
-     * @param int     $pageId
-     * @param string  $year
-     * @param string  $month
-     * @param string  $day
+     * @param string  $pageName
+     * @param int     $year
+     * @param int     $month
+     * @param int     $day
+     * @param bool    $status
      *
      * @return bool
      */
-    public function addMiser(int $pageId, string $year, string $month, string $day)
+    public function addMiser(string $pageName, int $year, int $month, int $day, bool $status): bool
     {
-        // TODO: implement
+        $pageEntity = $this->page->getPage($pageName);
+
+        if ($pageEntity === null) {
+            // TODO throw exception
+            return false;
+        }
+
+        $pageId = $pageEntity->id;
+
+        $result = $this->miser->addMiser($pageId, $year, $month, $day, $status);
+
+        return $result;
     }
 
     /**
