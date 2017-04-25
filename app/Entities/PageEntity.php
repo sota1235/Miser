@@ -27,7 +27,7 @@ class PageEntity extends Entity
      */
     public function __construct(int $id, string $name, string $created)
     {
-        $this->id       = $id;
+        $this->id      = $id;
         $this->name    = $name;
         $this->created = $created;
     }
