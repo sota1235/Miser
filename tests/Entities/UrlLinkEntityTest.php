@@ -2,7 +2,9 @@
 
 namespace Miser\Entities;
 
-class UrlLinkEntityTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class UrlLinkEntityTest extends TestCase
 {
     public function testShouldSuccessWithValidParameter()
     {

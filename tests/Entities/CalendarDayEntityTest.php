@@ -2,7 +2,9 @@
 
 namespace Miser\Entities;
 
-class CalendarDayEntityTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class CalendarDayEntityTest extends TestCase
 {
     public function testShouldSuccessWithValidParameter()
     {

@@ -2,13 +2,14 @@
 
 namespace Miser\Repositories;
 
+use PHPUnit\Framework\TestCase;
 use Mockery as m;
 use Mockery\MockInterface as i;
 use Psr\Log\LoggerInterface;
 use Miser\Entities\PageEntity;
 use Miser\DataAccess\Fluent\Page;
 
-class PageRepositoryTest extends \PHPUnit_Framework_TestCase
+class PageRepositoryTest extends TestCase
 {
     /** @var i|LoggerInterface */
     protected $logger;

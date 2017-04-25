@@ -1,15 +1,17 @@
 <?php
+declare(strict_types=1);
 
 namespace Miser\Services;
 
 use Mockery as m;
 use Mockery\MockInterface as i;
+use PHPUnit\Framework\TestCase;
 use Miser\Entities\PageEntity;
 use Miser\Entities\MiserEntity;
 use Miser\Repositories\MiserRepositoryInterface;
 use Miser\Repositories\PageRepositoryInterface;
 
-class MiserServiceTest extends \PHPUnit_Framework_TestCase
+class MiserServiceTest extends TestCase
 {
     /** @var i|MiserRepositoryInterface */
     protected $miser;
@@ -63,12 +65,14 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
 
     public function testAddMiserShouldSuccess()
     {
+        $miserId = 1235;
+
         $this->page->shouldReceive('getPage')->andReturn(
             new PageEntity(1, 'page_name', '2014-04-10')
         );
-        $this->miser->shouldReceive('addMiser')->andReturn(true);
+        $this->miser->shouldReceive('addMiser')->andReturn($miserId);
 
-        $this->assertTrue($this->service->addMiser('sota', 2017, 1, 30, true));
+        $this->assertEquals($miserId, $this->service->addMiser('sota', 2017, 1, 30, true));
     }
 
     public function testAddMiserShouldFailWithMiserRepo()
@@ -76,15 +80,15 @@ class MiserServiceTest extends \PHPUnit_Framework_TestCase
         $this->page->shouldReceive('getPage')->andReturn(
             new PageEntity(1, 'page_name', '2014-04-10')
         );
-        $this->miser->shouldReceive('addMiser')->andReturn(false);
+        $this->miser->shouldReceive('addMiser')->andReturnNull();
 
-        $this->assertFalse($this->service->addMiser('sota', 2017, 1, 30, false));
+        $this->assertNull($this->service->addMiser('sota', 2017, 1, 30, false));
     }
 
     public function testAddMiserShouldFailWithNotExistingPage()
     {
         $this->page->shouldReceive('getPage')->andReturn(null);
 
-        $this->assertFalse($this->service->addMiser('sota', 2017, 1, 30, true));
+        $this->assertNull($this->service->addMiser('sota', 2017, 1, 30, true));
     }
 }

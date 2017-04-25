@@ -2,10 +2,11 @@
 
 namespace Miser\Repositories;
 
+use PHPUnit\Framework\TestCase;
 use CalendR\Calendar;
 use Miser\Entities\CalendarDayEntity;
 
-class CalendarRepositoryTest extends \PHPUnit_Framework_TestCase
+class CalendarRepositoryTest extends TestCase
 {
     /** @var CalendarRepository */
     protected $repository;

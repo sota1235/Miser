@@ -2,7 +2,9 @@
 
 namespace Miser;
 
-class UrlHelpersTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class UrlHelpersTest extends TestCase
 {
     /**
      * @dataProvider getDates

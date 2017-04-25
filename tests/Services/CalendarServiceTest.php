@@ -2,12 +2,13 @@
 
 namespace Miser\Services;
 
+use PHPUnit\Framework\TestCase;
 use Mockery as m;
 use Mockery\MockInterface as i;
 use Miser\Entities\CalendarDayEntity;
 use Miser\Repositories\CalendarRepositoryInterface;
 
-class CalendarServiceTest extends \PHPUnit_Framework_TestCase
+class CalendarServiceTest extends TestCase
 {
     /** @var i|CalendarRepositoryInterface */
     protected $calendar;

@@ -2,7 +2,9 @@
 
 namespace Miser\Entities;
 
-class MiserEntityTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class MiserEntityTest extends TestCase
 {
     public function testShouldSuccessWithValidParameter()
     {
