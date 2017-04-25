@@ -79,16 +79,17 @@ class MiserRepositoryTest extends \PHPUnit_Framework_TestCase
 
     public function testAddMiserShouldReturnSuccessResult()
     {
-        $this->miser->shouldReceive('add')->andReturn(true);
+        $miserId = 1235;
+        $this->miser->shouldReceive('add')->andReturn($miserId);
 
-        $this->assertTrue($this->repository->addMiser(1235, 2016, 12, 24, true));
+        $this->assertEquals($miserId, $this->repository->addMiser(1235, 2016, 12, 24, true));
     }
 
     public function testAddMiserShouldReturnFailedResult()
     {
-        $this->miser->shouldReceive('add')->andReturn(false);
+        $this->miser->shouldReceive('add')->andReturnNull();
 
-        $this->assertFalse($this->repository->addMiser(1235, 2016, 12, 24, true));
+        $this->assertNull($this->repository->addMiser(333, 2016, 12, 24, true));
     }
 
     public function testAddMiserShouldReturnFalseWithDatabaseException()
@@ -96,6 +97,6 @@ class MiserRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->miser->shouldReceive('add')->andThrow(new \Exception);
         $this->logger->shouldReceive('log')->once();
 
-        $this->assertFalse($this->repository->addMiser(1235, 2016, 12, 24, true));
+        $this->assertNull($this->repository->addMiser(1235, 2016, 12, 24, true));
     }
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * @copyright (c) sota1235
@@ -25,9 +26,9 @@ interface MiserRepositoryInterface
      * @param int   $month
      * @param int   $day
      * @param bool  $status
-     * @return bool
+     * @return int ID of Miser.
      */
-    public function addMiser(int $pageId, int $year, int $month, int $day, bool $status);
+    public function addMiser(int $pageId, int $year, int $month, int $day, bool $status): ?int;
 
     /**
      * @param int   $pageId

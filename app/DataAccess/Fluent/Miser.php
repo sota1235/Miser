@@ -76,7 +76,7 @@ class Miser extends FluentDatabase
      * @param bool  $status
      * @return int
      */
-    public function add(int $pageId, int $year, int $month, int $day, bool $status): ?int
+    public function add(int $pageId, int $year, int $month, int $day, bool $status)
     {
         /**
          * @param int  $year

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * @copyright (c) sota1235
@@ -60,18 +61,18 @@ class MiserRepository implements MiserRepositoryInterface
      * @param int   $month
      * @param int   $day
      * @param bool  $status
-     * @return bool
+     * @return int|null
      */
-    public function addMiser(int $pageId, int $year, int $month, int $day, bool $status)
+    public function addMiser(int $pageId, int $year, int $month, int $day, bool $status): ?int
     {
         try {
-            $result = $this->miser->add($pageId, $year, $month, $day, $status);
+            $miserId = $this->miser->add($pageId, $year, $month, $day, $status);
         } catch (\Exception $e) {
             $this->logger->log(\Psr\Log\LogLevel::ERROR, $e->getMessage());
-            $result = false;
+            $miserId = null;
         }
 
-        return !!$result;
+        return $miserId;
     }
 
     /**
