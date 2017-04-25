@@ -59,22 +59,22 @@ class MiserService
      * @param int     $day
      * @param bool    $status
      *
-     * @return bool
+     * @return int|null
      */
-    public function addMiser(string $pageName, int $year, int $month, int $day, bool $status): bool
+    public function addMiser(string $pageName, int $year, int $month, int $day, bool $status): ?int
     {
         $pageEntity = $this->page->getPage($pageName);
 
         if ($pageEntity === null) {
             // TODO throw exception
-            return false;
+            return null;
         }
 
         $pageId = $pageEntity->id;
 
-        $result = $this->miser->addMiser($pageId, $year, $month, $day, $status);
+        $miserId = $this->miser->addMiser($pageId, $year, $month, $day, $status);
 
-        return $result;
+        return $miserId;
     }
 
     /**

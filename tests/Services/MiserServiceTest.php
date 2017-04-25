@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Miser\Services;
 
-use Mockery as m;
-use Mockery\MockInterface as i;
 use PHPUnit\Framework\TestCase;
 use Miser\Entities\PageEntity;
 use Miser\Entities\MiserEntity;
@@ -13,10 +11,10 @@ use Miser\Repositories\PageRepositoryInterface;
 
 class MiserServiceTest extends TestCase
 {
-    /** @var i|MiserRepositoryInterface */
+    /** @var MiserRepositoryInterface */
     protected $miser;
 
-    /** @var i|PageRepositoryInterface */
+    /** @var PageRepositoryInterface */
     protected $page;
 
     /** @var MiserService */
@@ -26,8 +24,8 @@ class MiserServiceTest extends TestCase
     {
         parent::setUp();
 
-        $this->miser = m::mock(MiserRepositoryInterface::class);
-        $this->page  = m::mock(PageRepositoryInterface::class);
+        $this->miser = $this->createMock(MiserRepositoryInterface::class);
+        $this->page  = $this->createMock(PageRepositoryInterface::class);
 
         $this->service = new MiserService($this->miser, $this->page);
     }
@@ -49,7 +47,7 @@ class MiserServiceTest extends TestCase
             $testMiser['id'], $testMiser['year'], $testMiser['month'],
             $testMiser['day'], $testMiser['status']
         );
-        $this->miser->shouldReceive('getMisers')->andReturn([$miserEntity]);
+        $this->miser->method('getMisers')->willReturn([$miserEntity]);
 
         $this->assertEquals($expected, $this->service->getMisers('page_name', 2017, 14));
     }
@@ -58,7 +56,7 @@ class MiserServiceTest extends TestCase
     {
         $expected = [];
 
-        $this->miser->shouldReceive('getMisers')->andReturn([]);
+        $this->miser->method('getMisers')->willReturn([]);
 
         $this->assertEquals($expected, $this->service->getMisers('page_name', 2017, 14));
     }
@@ -67,27 +65,27 @@ class MiserServiceTest extends TestCase
     {
         $miserId = 1235;
 
-        $this->page->shouldReceive('getPage')->andReturn(
+        $this->page->method('getPage')->willReturn(
             new PageEntity(1, 'page_name', '2014-04-10')
         );
-        $this->miser->shouldReceive('addMiser')->andReturn($miserId);
+        $this->miser->method('addMiser')->willReturn($miserId);
 
         $this->assertEquals($miserId, $this->service->addMiser('sota', 2017, 1, 30, true));
     }
 
     public function testAddMiserShouldFailWithMiserRepo()
     {
-        $this->page->shouldReceive('getPage')->andReturn(
+        $this->page->method('getPage')->willReturn(
             new PageEntity(1, 'page_name', '2014-04-10')
         );
-        $this->miser->shouldReceive('addMiser')->andReturnNull();
+        $this->miser->method('addMiser')->willReturn(null);
 
         $this->assertNull($this->service->addMiser('sota', 2017, 1, 30, false));
     }
 
     public function testAddMiserShouldFailWithNotExistingPage()
     {
-        $this->page->shouldReceive('getPage')->andReturn(null);
+        $this->page->method('getPage')->willReturn(null);
 
         $this->assertNull($this->service->addMiser('sota', 2017, 1, 30, true));
     }
