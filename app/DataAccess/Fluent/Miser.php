@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * @copyright (c) sota1235
@@ -73,9 +74,9 @@ class Miser extends FluentDatabase
      * @param int   $month
      * @param int   $day
      * @param bool  $status
-     * @return bool
+     * @return int
      */
-    public function add(int $pageId, int $year, int $month, int $day, bool $status)
+    public function add(int $pageId, int $year, int $month, int $day, bool $status): ?int
     {
         /**
          * @param int  $year
@@ -120,7 +121,7 @@ class Miser extends FluentDatabase
             $dateId = $getDateId($year, $month, $day);
         }
 
-        $result = $this->builder()
+        $miserId = $this->builder()
             ->insert($this->table())
             ->values([
                 'status'  => '?',
@@ -130,8 +131,9 @@ class Miser extends FluentDatabase
             ->setParameter(0, $status)
             ->setParameter(1, $dateId)
             ->setParameter(2, $pageId)
-            ->execute();
+            ->execute()
+            ->lastInsertId();
 
-        return $result;
+        return $miserId;
     }
 }
